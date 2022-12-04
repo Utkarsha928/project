@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 
 import { StocksComponent } from './components/stocks/stocks.component';
-import { StockquotesComponent } from './components/stockquotes/stockquotes.component';
+
 import { SentimentsComponent } from './components/sentiments/sentiments.component';
 
 
@@ -16,7 +16,7 @@ import { SentimentsComponent } from './components/sentiments/sentiments.componen
   declarations: [
     AppComponent,
     StocksComponent,
-    StockquotesComponent,
+    
     SentimentsComponent,
     
     
