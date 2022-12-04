@@ -1,0 +1,33 @@
+
+<h3>{{this.name}}</h3><br>
+<h6>{{this.Sentiment.symbol}}</h6>
+<div class="card-group">
+    <div class="card">
+    
+      <img src=  "{{this.Sentiment.data[0].change > 0 ? 'assets/greenup.jpg' : 'assets/reddown.png' }} " class="card-img-top"  alt="No Information Available">
+      
+    
+      <div class="card-body">
+        <h5 class="card-title">January</h5>
+        <p class="card-text">Change : {{this.Sentiment.data[0].change}}</p>
+        <p class="card-text">MSPR : {{this.Sentiment.data[0].mspr}}</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src=  "{{this.Sentiment.data[1].change > 0 ? 'assets/greenup.jpg' : 'assets/reddown.png' }} " class="card-img-top"  alt="No Information Available">
+      <div class="card-body">
+        <h5 class="card-title"> February </h5>
+        <p class="card-text"> Change : {{this.Sentiment.data[1].change}} </p>
+        <p class="card-text"> MSPR : {{this.Sentiment.data[1].mspr}} </p>
+      </div>
+    </div>
+    <div class="card">
+      <img src=  "{{this.Sentiment.data[2].change > 0 ? 'assets/greenup.jpg' : 'assets/reddown.png' }} " class="card-img-top"  alt="No Information Available">
+      <div class="card-body">
+        <h5 class="card-title">March</h5>
+        <p class="card-text">Change : {{this.Sentiment.data[2].change}}</p>
+        <p class="card-text">MSPR : {{this.Sentiment.data[2].mspr}}</p>
+      </div>
+    </div>
+  </div>
+  <a id="backbtn" routerLink="">Back to List of Stocks</a>

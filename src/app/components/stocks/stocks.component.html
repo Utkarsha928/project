@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+        <label>Enter the symbol of a stock to track (i.e AAPL, TSLA, GOOGL)</label>
+        <div class="input-group">
+            <input class="form-control" type="text" id="stockInput" [(ngModel)]="symbols">
+            <button class="btn btn-outline-secondary" type="botton" id="trackBtn" (click)="searchStock()">Track
+                Stock</button>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+
+<div class="card-group">
+<div *ngFor="let stock of this.symstock ; index as i">
+    
+        <div *ngFor="let q of this.allQuotes ; index as j">
+            <div *ngFor="let n of this.namestock ; index as k">
+        <div *ngIf="i===j && j==k ">
+            
+           <div class="card" style="width: 15rem;">
+            <button type="button" id="remove{{stock}}" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="Removestock(i)"  ></button>
+            <img src="{{q.dp > 0 ? 'assets/uparrow.png' : 'assets/downarrow.png' }}" class="card-img-top" alt="Image"> 
+             
+            <div class="card-body">
+              <h5 class="card-title"> {{n}} </h5>
+              <p class="card-text"> {{stock}} </p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"> Change Today : {{q.dp}} </li>
+              <li class="list-group-item"> Current Price : {{q.c}} </li>
+              <li class="list-group-item"> Opening Price : {{q.o}} </li>
+              <li class="list-group-item"> High Price : {{q.h}} </li>
+            </ul>
+            <div class="card-body">
+              <a [routerLink]="['/sentiment/', stock ]" id="sentiment{{stock}}" class="card-link">Go to Social Sentiment Details</a>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+<br>
+
+
+
