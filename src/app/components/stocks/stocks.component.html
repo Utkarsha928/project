@@ -21,8 +21,8 @@
         <div *ngIf="i===j && j==k ">
             
            <div class="card" style="width: 15rem;">
-            <button type="button" id="remove{{stock}}" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="Removestock(i)"  ></button>
-            <img src="{{q.dp > 0 ? 'assets/uparrow.png' : 'assets/downarrow.png' }}" class="card-img-top" alt="Image"> 
+            <button type="button" id="remove{{stock}}"  (click)="Removestock(i)"  >CLOSE</button>
+            <img src="{{q.dp > 0 ? '../assets/uparrow.png' : '../assets/downarrow.png' }}" class="card-img-top" alt="Image"> 
              
             <div class="card-body">
               <h5 class="card-title"> {{n}} </h5>
