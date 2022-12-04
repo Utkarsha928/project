@@ -1,12 +1,12 @@
 import { Component, OnInit  } from '@angular/core';
 
 
-import { stockDetails } from 'src/app/interfaces/stockDetails';
+import { stockDetails } from '../../interfaces/stockDetails';
 
-import { stockQuotes } from 'src/app/interfaces/stockQuotes';
-import { stockInterface } from 'src/app/interfaces/stockinterface';
-import { StockdetailsService } from 'src/app/stockdetails.service';
-import { symbolStock } from 'src/app/interfaces/symbolSTock';
+import { stockQuotes } from '../../interfaces/stockQuotes';
+import { stockInterface } from '../../interfaces/stockinterface';
+import { StockdetailsService } from '../../stockdetails.service';
+import { symbolStock } from '../../interfaces/symbolSTock';
 
 import { ActivatedRoute, Router } from '@angular/router';
 

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { sentiment } from 'src/app/interfaces/sentiment';
-import { sentimentdetails } from 'src/app/interfaces/sentimentDetails';
-import { StockdetailsService } from 'src/app/stockdetails.service';
+import {sentiment} from '../../interfaces/sentiment' ;
+
+
+import { sentimentdetails } from '../../interfaces/sentimentDetails';
+import { StockdetailsService } from '../../stockdetails.service';
 
 @Component({
   selector: 'app-sentiments',
@@ -11,7 +13,7 @@ import { StockdetailsService } from 'src/app/stockdetails.service';
 })
 export class SentimentsComponent implements OnInit {
 
-  Sentiment!:sentiment;
+  Sentiment:sentiment;
   sentimentDetails:sentimentdetails[]=[];
   name:string;
 
