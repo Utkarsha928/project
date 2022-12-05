@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { StocksComponent } from './components/stocks/stocks.component';
 
 import { SentimentsComponent } from './components/sentiments/sentiments.component';
+import { DatePipe } from '@angular/common';
 
 
 
@@ -28,7 +29,7 @@ import { SentimentsComponent } from './components/sentiments/sentiments.componen
     FormsModule
 
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

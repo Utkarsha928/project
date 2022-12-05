@@ -24,12 +24,7 @@ export class StockdetailsService {
     
   }
 
-  /*httpOptions = {
-    headers : new HttpHeaders({
-      'Content-type' : 'application/json; charset=utf-8',
-      
-    })
-  }*/
+  
 
   getStockDetails(symbols:string){
     return this.http.get<stockDetails>(`https://finnhub.io/api/v1/search?q=${symbols}&token=bu4f8kn48v6uehqi3cqg`
@@ -46,8 +41,8 @@ export class StockdetailsService {
     return this.http.get<stockQuotes>(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=bu4f8kn48v6uehqi3cqg`)
   }
 
-  getsentiments(sym:string){
-    return this.http.get<sentiment>(`https://finnhub.io/api/v1/stock/insider-sentiment?symbol=${sym}&from=2022-01-01&to=2022-03-01&token=bu4f8kn48v6uehqi3cqg`)
+  getsentiments(sym,start_date,end_date){
+    return this.http.get<sentiment>(`https://finnhub.io/api/v1/stock/insider-sentiment?symbol=${sym}&from=${start_date}&to=${end_date}&token=bu4f8kn48v6uehqi3cqg`)
   }
   
   addStock(object){
