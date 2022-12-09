@@ -55,11 +55,13 @@ export class StocksComponent implements OnInit{
       console.log(res.result[0].description);
       this.stockName=res.result[0].description;
       this.symboltype=res.result[0].displaySymbol;
-      this.stockDetails.symbolstock(this.symboltype);
-      this.stockDetails.putsymbol();
+      // this.stockDetails.symbolstock(this.symboltype);
+      // this.stockDetails.putsymbol();
+      this.stockDetails.addsymbol(this.symboltype);
       this.symstock=JSON.parse(localStorage.getItem('symbl'));
-      this.stockDetails.symbolname(this.stockName);
-      this.stockDetails.addsymbolName();
+      // this.stockDetails.symbolname(this.stockName);
+      // this.stockDetails.addsymbolName();
+      this.stockDetails.addsymbolName(this.stockName)
       this.namestock=JSON.parse(localStorage.getItem('Names'));
       
       this.stockDetails.getStockQuotes(res.result[0].displaySymbol).subscribe((val)=>{
@@ -67,8 +69,9 @@ export class StocksComponent implements OnInit{
       
         this.stockquotes=val;
         localStorage.setItem(this.stockName,JSON.stringify(this.stockquotes));
-        this.stockDetails.addStock(this.stockquotes);
-        this.stockDetails.putstocks();
+        // this.stockDetails.addStock(this.stockquotes);
+        // this.stockDetails.putstocks();
+        this.stockDetails.addstocks(this.stockquotes);
         this.allQuotes=JSON.parse(localStorage.getItem('stocks'));
         
       })

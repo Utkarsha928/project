@@ -15,8 +15,8 @@ import { symbolStock } from './interfaces/symbolSTock';
 })
 export class StockdetailsService {
 
-  StockData:stockQuotes[]=[];
-  StockSymbol:symbolStock[]=[];
+  StockData:stockQuotes;
+  StockSymbol:symbolStock;
   symbolName=[];
   
 
@@ -45,36 +45,72 @@ export class StockdetailsService {
     return this.http.get<sentiment>(`https://finnhub.io/api/v1/stock/insider-sentiment?symbol=${sym}&from=${start_date}&to=${end_date}&token=bu4f8kn48v6uehqi3cqg`)
   }
   
-  addStock(object){
+  // addStock(object){
   
-    this.StockData.push(object)
-  }
-  putstocks(){
-    for(let stock of this.StockData){
-      localStorage.setItem('stocks',JSON.stringify(this.StockData))
+  //   this.StockData.push(object)
+  // }
+  // putstocks(){
+  //   for(let stock of this.StockData){
+  //     localStorage.setItem('stocks',JSON.stringify(this.StockData))
+  //   }
+  // }
+  
+  // symbolstock(sym){
+    
+  //   this.StockSymbol.push(sym)
+  // }
+  // putsymbol(){
+    
+  //   for(let symbl of this.StockSymbol ){
+  //     localStorage.setItem('symbl' , JSON.stringify(this.StockSymbol))
+    
+  // }
+  // }
+  // symbolname(sym){
+  //   this.symbolName.push(sym)
+  // }
+  
+  // addsymbolName(){
+    
+  //   for(let name of this.symbolName){
+  //     localStorage.setItem('Names', JSON.stringify(this.symbolName))
+  //   }
+  // }
+
+  addsymbol(sym){
+    let symbls=[];
+    if(localStorage.getItem('symbl')){
+      symbls=JSON.parse(localStorage.getItem('symbl'))
+      symbls.push(sym)
+
+    }else{
+      symbls=[sym];
     }
+    localStorage.setItem('symbl',JSON.stringify(symbls))
   }
-  
-  symbolstock(sym){
-    
-    this.StockSymbol.push(sym)
-  }
-  putsymbol(){
-    
-    for(let symbl of this.StockSymbol ){
-      localStorage.setItem('symbl' , JSON.stringify(this.StockSymbol))
-    
-  }
-  }
-  symbolname(sym){
-    this.symbolName.push(sym)
-  }
-  
-  addsymbolName(){
-    
-    for(let name of this.symbolName){
-      localStorage.setItem('Names', JSON.stringify(this.symbolName))
+
+  addstocks(stock){
+    let stocks=[];
+    if(localStorage.getItem('stocks')){
+      stocks=JSON.parse(localStorage.getItem('stocks'))
+      stocks.push(stock)
+
+    }else{
+      stocks=[stock];
     }
+    localStorage.setItem('stocks',JSON.stringify(stocks))
+  }
+  
+  addsymbolName(name){
+    let names=[];
+    if(localStorage.getItem('Names')){
+      names=JSON.parse(localStorage.getItem('Names'))
+      names.push(name)
+
+    }else{
+      names=[name];
+    }
+    localStorage.setItem('Names',JSON.stringify(names))
   }
 
 } 
